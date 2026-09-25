@@ -2,4 +2,7 @@
 *
 # Except this .gitignore file
 !.gitignore
+# Keep the GoodReads datasets under version control.
+!GoodReads/
+!GoodReads/*.csv
 
