@@ -82,3 +82,11 @@ def hash_value(table, key):
 
     value = int((abs(a * h + b) % p) % m)
     return value
+
+
+def default_compare(key_1, key_2):
+    if key_1 == key_2:
+        return 0
+    if key_1 > key_2:
+        return 1
+    return -1
