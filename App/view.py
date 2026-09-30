@@ -23,9 +23,14 @@
  *
  * Dario Correal
  """
-
+import os
+import csv
+import time
+import tracemalloc
 import sys
 import App.logic as logic
+from DataStructures.Map import map_lineal_probing as lp
+from DataStructures.List import array_list as al
 # TODO Realice la importación del mapa linear probing
 # TODO Realice la importación de ArrayList como estructura de datos auxiliar para sus requerimientos
 

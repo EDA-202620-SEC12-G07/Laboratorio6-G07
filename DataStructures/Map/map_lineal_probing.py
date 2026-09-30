@@ -2,6 +2,7 @@ import random
 
 from DataStructures.Map import map_entry as me
 from DataStructures.Map import map_functions as mf
+from DataStructures.List import array_list as al
 
 
 def new_map(num_elements, load_factor, prime=109345121):
@@ -62,6 +63,26 @@ def remove(my_map, key):
 
 def size(my_map):
     return my_map["size"]
+
+
+def is_empty(my_map):
+    return my_map["size"] == 0
+
+
+def key_set(my_map):
+    keys = al.new_list()
+    for entry in my_map["table"]:
+        if entry is not None and me.get_key(entry) is not None:
+            al.add_last(keys, me.get_key(entry))
+    return keys
+
+
+def value_set(my_map):
+    values = al.new_list()
+    for entry in my_map["table"]:
+        if entry is not None and me.get_key(entry) is not None:
+            al.add_last(values, me.get_value(entry))
+    return values
 
 
 def find_slot(my_map, key, hash_value):

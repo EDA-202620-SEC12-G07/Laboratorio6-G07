@@ -1,4 +1,4 @@
-from DataStructures.Map import map_linear_probing as mp
+from DataStructures.Map import map_lineal_probing as mp
 from DataStructures.List import array_list as lt
 from DataStructures.Map import map_entry as me
 from DataStructures.Map import map_functions as mf
