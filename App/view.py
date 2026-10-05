@@ -52,8 +52,7 @@ def new_logic():
 # TODO Incluir las mediciones de tiempo y uso de memoria en la ejecución de la consulta.
 def load_data(control, memflag):
     """
-    Solicita a la controlador que cargue los datos.
-    Retorna también el tiempo de carga [ms] y, si memflag es True, la memoria usada [kB].
+    Solicita a la controlador que cargue los datos
     """
     books, authors, tags, book_tags, delta_time, delta_memory = logic.load_data(control, memflag)
     return books, authors, tags, book_tags, delta_time, delta_memory
@@ -153,10 +152,8 @@ def main():
         inputs = input("Seleccione una opción para continuar\n")
         # TODO agregar tiempo de ejecución y consumo de memoria
         if int(inputs[0]) == 1:
-            # Para el tiempo de ejecución "real" se carga sin medir memoria (False),
-            # porque tracemalloc hace más lenta la carga. La memoria se mide aparte (True).
             mem = input("¿Desea observar el uso de memoria? (True/False): ")
-            memflag = mem.strip() in ("True", "true", "T", "t", "1")
+            memflag = mem.strip().lower() == "true"
             print("Cargando información de los archivos ....")
             bk, at, tg, bktg, delta_time, delta_memory = load_data(control, memflag)
             print('Libros cargados: ' + str(bk))
